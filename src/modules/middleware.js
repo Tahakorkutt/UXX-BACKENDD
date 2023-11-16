@@ -18,7 +18,6 @@ const userRegisterValidationRules =  [
   body('lastname').notEmpty().trim().isLength({ min: 1 }).exists(),
   body('address').notEmpty().trim().isLength({ min: 1 }).exists(),
   body('age').notEmpty().trim().isLength({ min: 1 }).exists(),
-  body('gender').notEmpty().trim().isLength({ min: 1 }).exists()
 ]
 
 const userLoginValidationRules =  [

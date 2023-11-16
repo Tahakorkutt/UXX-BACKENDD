@@ -7,7 +7,7 @@ const CustomError = require('../../lib/Error')
 const Response = require('../../lib/Response')
 
 const registerUser = async (req, res, next) => {
-  const { email, phone,  password, firstname, lastname, address, age, gender} = req.body
+  const { email, phone,  password, firstname, lastname, address, age} = req.body
 
   try {
 
@@ -17,7 +17,7 @@ const registerUser = async (req, res, next) => {
       password: await hashPassword(password)
     }
     const newUser = await UserService.createUser(user)
-    UserDetailService.createUserDetail(newUser._id,  firstname, lastname, address, email, phone,age, gender)
+    UserDetailService.createUserDetail(newUser._id,  firstname, lastname, address, email, phone,age)
 
     const token = await createJWT({ id: newUser._id, email: newUser.email })
     UserService.updateToken(newUser._id, token)

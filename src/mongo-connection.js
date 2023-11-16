@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb+srv://taha:taha123@cluster0.dexovoh.mongodb.net';
+const connectionString = 'mongodb+srv://taha:taha123@cluster0.c2xw2so.mongodb.net/ux-backend?retryWrites=true&w=majority';
+
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
